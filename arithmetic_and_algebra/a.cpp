@@ -16,7 +16,7 @@ bool prime(int a){
 
 int main(){
 	
-	int n1, n2;;
+	int n1, n2;
 	while(cin >> n1 >> n2){
 		bool aux = false;
 		int cont = 0;
