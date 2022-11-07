@@ -12,24 +12,22 @@ typedef struct Tree {
 	} 
 } Tree;
 
-void InsertBT(Tree* tree, int value) {
-	if (value > tree->value) {
-		if (!tree->right) {
-			tree->right = new Tree(value);
-			return;
-		}	
-		InsertBT(tree->right, value);
-	} else {
-		if (!tree->left) {
-			tree->left = new Tree(value);
-			return;
-		}	
-		InsertBT(tree->left, value);
+Tree* InsertBT(Tree* tree, int value) {
+	if (!tree) {
+		return new Tree(value);
 	}
+	if (value > tree->value) {
+		tree->right = InsertBT(tree->right, value);
+	} else {
+		tree->left = InsertBT(tree->left, value);
+	}
+	return tree;
 }
 
 void PreOrder(Tree* tree) {
-	if (!tree) return;
+	if (!tree) {
+		return;
+	}
 	cout << tree->value << " ";
 	PreOrder(tree->left);
 	PreOrder(tree->right);
@@ -37,27 +35,23 @@ void PreOrder(Tree* tree) {
 
 void InOrder(Tree* tree) {
 	if (!tree) return;
-	PreOrder(tree->left);
+	InOrder(tree->left);
 	cout << tree->value << " ";
-	PreOrder(tree->right);
+	InOrder(tree->right);
 }
 void PosOrder(Tree* tree) {
 	if (!tree) return;
-	PreOrder(tree->left);
-	PreOrder(tree->right);
+	PosOrder(tree->left);
+	PosOrder(tree->right);
 	cout << tree->value << " ";
 }
 int main(){
 	Tree* tree = nullptr;
 	int x;
 	bool ok = false;
+	Tree* root;
 	while (cin >> x) {
-		if (!ok) {
-			tree = new Tree(x);
-			ok = true;			
-			continue;
-		}
-		InsertBT(tree, x);
+		tree = InsertBT(tree, x);
 	}
 	PreOrder(tree);
 	cout << endl;
