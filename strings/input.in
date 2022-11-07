@@ -1,13 +1,1 @@
-3
-10:15:25:346-Iniciou a configuração do equipamento X
-10:16:26:852-Finalizou a configuração do equipamento X
-10:17:01:452-Iniciou procedimento de backup da base Y
-10:18:20:123-Finalizou procedimento de backup da base Y
-5
-20:35:25:376-Iniciou programação da interface Z
-20:36:26:832-Finalizou programação da interface Z
-20:36:41:442-Iniciou job de agendamento de clientes
-20:37:20:823-Finalizou job de agendamento de clientes
-20:38:20:273-Iniciou cancelamento da base W
-20:37:10:227-Finalizou cancelamento da base W
--1
+64 62 65 66 29 76 29 65 70 75 69 66 70 79 76 60,
