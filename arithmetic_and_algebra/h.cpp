@@ -11,12 +11,10 @@ int main(){
 	int year;
 	int M = 0;
 	while(M < c){
+		M += m;
 		M += M*(j/100);
 		months++;
-		M += m;
-		cout << M << endl;
 	}
-
 
 	if(months >= 12){
 		year = months/12;
