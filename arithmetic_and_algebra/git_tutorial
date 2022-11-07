@@ -1,0 +1,57 @@
+Login:
+	git config --global user.name "Your name"
+	git config -- global user.email "YourEmail.com"
+
+Informações sobre a conta logada:
+	git config --list
+
+Iniciar um repositório:
+	git init
+
+	* Saber oq tem no repositório: ls
+
+Saber se fiz algum commit:
+	git status
+
+Criar arquivo no repositório:
+	touch namearquivo
+
+Adicionar arquivo:
+	git add nomearquivo
+	git add .    # Add todos os arquivos de uma vez
+
+Modos de fazer commit (dps de adicionar um arq):
+	git commit -m "Text"
+	Exemplo: git commit -m "create 01.cpp"
+
+Ver commits q fiz:
+	git log
+
+Voltar a algum commit feito (desfazer algo):
+	1. confira o git log
+	2. get checkout <commit-hash>
+		commit-hash é o número do commit
+	Exemplo:
+	git log
+	.....
+	git checkout 5cv48acdkjsj9129rejk...
+
+Saber branch que estou:
+	git branch
+
+Voltar ao branch master:
+	git checkout master
+
+Criando nova branch:
+	git branch nomebrach
+	# Aqui já entraremos para a nova branch
+	# O commit que fizer será na branch
+
+Passar tudo da branch para a master:
+	git merge nomebranch
+
+Enviar as alterações:
+	1. criar o repositório se n existir
+	2. copie o link do repositório
+	3. git remote add origin link
+	4. git push
