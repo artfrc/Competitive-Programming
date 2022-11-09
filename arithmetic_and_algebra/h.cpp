@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// wtf
-
 int main(){
 	
 	double m,j,c;
