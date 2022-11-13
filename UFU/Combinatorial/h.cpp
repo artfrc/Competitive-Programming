@@ -68,18 +68,23 @@ int main() {
 		else nVogais++;
 	}
 
-	int ans = 1, aux = 1;
+	int aux = 1;
+	long long int ans = 1;
 	for(int i = 0; i < s.size(); i++) {
-		if(nConsoantes == 0 || nVogais == 0) break;
-
-		if(aux > 0) {
-			ans *= nConsoantes;
-			nConsoantes--;
+		if(nConsoantes == 0 || nVogais == 0) {
+			if(nConsoantes > 0) { ans *= nConsoantes; nConsoantes--; }
+			else if(nVogais > 0) { ans *= nVogais; nVogais--; }		
 		} else {
-			ans *= nVogais;
-			nVogais--;
-		}
-		aux *= (-1);
+
+			if(aux > 0) {
+				ans *= nConsoantes;
+				nConsoantes--;
+			} else {
+				ans *= nVogais;
+				nVogais--;
+			}
+			aux *= (-1);
+		}	
 	}
 		
 	cout << ans/2 << endl;
