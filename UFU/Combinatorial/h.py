@@ -1,3 +1,7 @@
+def factorial(n):
+	if n == 0 or n == 1: return 1
+	else: return factorial(n-1)*n
+
 s = input()
 
 s = s.replace(' ','')
@@ -10,27 +14,7 @@ for i in range(0,len(s)):
 	else:
 		consoantes += 1
 
-ans = 1
-aux = 1
-for i in range(0,len(s)):
-	if consoantes == 0 or vogais == 0:
-		if consoantes > 0:
-			ans *= consoantes
-			consoantes -= 1
-		elif vogais > 0:
-			ans *= vogais
-			vogais -= 1
-	else:
-		if aux > 0:
-			ans *= consoantes
-			consoantes -= 1
-		else:
-			ans *= vogais
-			vogais -= 1
-
-		aux *= (-1);
-
-ans = ans/2
+ans = (factorial(vogais) * factorial(consoantes))/2
 print("%.0f" % ans)
 		
 	
